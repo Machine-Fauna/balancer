@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  balancer:
+    build:
+      context: .
+    container_name: balancer
+    restart: always
+    ports:
+      - "80:80"
+    networks:
+      - mf
+
+networks:
+  mf:
+    external: true

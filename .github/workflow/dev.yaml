@@ -1,0 +1,21 @@
+---
+
+name: Development
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v2
+
+      - name: Start
+        run: |
+          cd dev
+          docker compose up --build -d
+            
