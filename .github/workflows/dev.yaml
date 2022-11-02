@@ -8,7 +8,7 @@ on:
       - dev
 
 jobs:
-  build:
+  deliver:
     runs-on: 
       - self-hosted
       - development
@@ -19,4 +19,6 @@ jobs:
       - name: Start
         run: |
           cd dev
-          docker compose up --build -d
+          docker compose build
+          docker compose down
+          docker compose up -d
