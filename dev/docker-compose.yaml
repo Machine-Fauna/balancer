@@ -5,7 +5,7 @@ services:
     build:
       context: .
     container_name: balancer
-    restart: always
+    restart: unless-stopped
     ports:
       - "80:80"
     networks:
