@@ -1,10 +1,10 @@
 version: '3.4'
 
 services:
-  balancer:
+  mf-nginx:
     build:
       context: .
-    container_name: balancer
+    container_name: mf-nginx
     restart: unless-stopped
     ports:
       - "80:80"
